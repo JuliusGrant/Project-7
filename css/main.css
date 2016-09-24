@@ -1,0 +1,182 @@
+/* -----base styles----- */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+
+video {
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+}
+
+.text {
+  margin: 30px auto 0;
+  width: 90%;
+	padding-bottom: 30px;
+}
+
+
+
+/* -----video styles----- */
+
+.wrapper {
+	width: 800px;
+  margin: 0 auto;
+  /*background-color: lightgrey;*/
+  padding: 10px;
+	position: relative;
+}
+
+.video-container {
+	position: relative;
+
+}
+
+.video-controls {
+	color: white;
+	height: 80px;
+	width: 780px;
+	position: absolute;
+	bottom: 406px;
+	left: 10px;
+	right: 0;
+	padding: 5px;
+	opacity: 0;
+	-webkit-transition: opacity .3s;
+	-moz-transition: opacity .3s;
+	-o-transition: opacity .3s;
+	-ms-transition: opacity .3s;
+	transition: opacity .3s;
+
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.13, rgb(59, 158, 60)),
+		color-stop(1, rgb(138, 241, 117))
+	);
+
+}
+
+
+
+.video-controls:hover  {
+	opacity: .9;
+}
+
+button {
+	background: #1e3d22;
+	border: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+#seek-bar {
+	width: 779px;
+	opacity: 0.5;
+	position: absolute;
+	bottom: 480px;
+}
+
+#seek-bar:hover {
+	opacity: 1;
+}
+
+#play-pause {
+	position: absolute;
+	left: 25px;
+	bottom: 25px;
+}
+
+#curtimetext {
+	position: absolute;
+	left: 90px;
+	bottom: 29px;
+}
+
+#dash {
+	position: absolute;
+	left: 135px;
+	bottom: 29px;
+}
+
+#durtimetext {
+	position: absolute;
+	left: 142px;
+	bottom: 29px;
+}
+
+
+#mute {
+	position: absolute;
+	left: 505px;
+	bottom: 25px;
+}
+
+#volume-bar {
+	position: absolute;
+	left: 590px;
+	width: 60px;
+	bottom: 31px;
+}
+
+#full-screen {
+	position: absolute;
+	left: 670px;
+	bottom: 25px;
+}
+
+/*----- Transcript Highlight -----*/
+
+
+.passage-audio {
+    /*height: 2em;*/
+}
+#passage-audio {
+    /*width: 100%;*/
+    position: relative;
+    /*max-height: 2em;*/
+}
+#passage-text.speaking {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+}
+/*.autofocus-current-word,
+.playback-rate {
+    font-size: smaller;
+}
+.autofocus-current-word label,
+.playback-rate label {
+    font-weight: bold;
+}*/
+
+
+.initialized span[data-begin]:focus,
+.initialized span[data-begin]:hover {
+    background-color: yellow;
+    /*box-shadow: 0px 0px 4px #FFFFCA;*/
+}
+.initialized span[data-begin].speaking {
+    background-color: yellow;
+    /*box-shadow: 0px 0px 4px yellow;*/
+}
+.initialized span[data-begin] {
+    cursor: pointer;
+}

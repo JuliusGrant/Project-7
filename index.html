@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Video and Audio</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+        <div class="wrapper ">
+
+            <p class="loading">
+                <em><img src="loader.gif" alt="Initializing audio"> Loading audio…</em>
+            </p>
+
+            <p class="passage-audio" hidden>
+                <video id="passage-audio" class="passage video-container">
+                    <!-- @todo WebM? -->
+                    <source src="video/video.mp4" type="video/mp4">
+                    <source src="video/video.ogg" type="video/ogg">
+                    <em class="error"><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
+                </video>
+            </p>
+            <div class="video-controls">
+              <button class="" type="button" id="play-pause">Play</button>
+              <span class="" id="curtimetext">00:00 </span><span class="" id="dash"> / </span> <span class=""  id="durtimetext">  00:59</span>
+              <button class="" type="button" id="mute">Mute</button>
+              <input class="" type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+              <button class="" type="button" id="full-screen">Full-Screen</button>
+            </div>
+            <input class="seek" type="range" id="seek-bar" value="0">
+
+            <!--  Don't Use  -->
+            <p class="playback-rate" hidden title="Note that increaseing the reading rate will decrease accuracy of word highlights">
+                <label for="playback-rate" hidden></label>
+                <input id="playback-rate" type="range"  disabled onchange='this.nextElementSibling.textContent = String(Math.round(this.valueAsNumber * 10) / 10) + "\u00D7";' hidden>
+                <output></output>
+            </p>
+            <p class="playback-rate-unavailable" hidden>
+                <em>(It seems your browser does not support <code>HTMLMediaElement.playbackRate</code>, so you will not be able to change the speech rate.)</em>
+            </p>
+            <p class="autofocus-current-word" hidden>
+                <input type="checkbox" id="autofocus-current-word" hidden checked>
+                <label for="autofocus-current-word"></label>
+            </p>
+            <!--  Don't Use  -->
+
+
+
+            <div id="passage-text" class="passage">
+                <p class="text">
+                    <span data-dur="3.870" data-begin="0.240">Now that we've looked at the architecture
+                    of the internet, let's see how you might</span>
+                    <span data-dur="3.405" data-begin="4.130">connect your personal devices to
+                    the internet inside your house.</span>
+                    <span data-dur="3.722" data-begin="7.535">Well there are many ways to
+                    connect to the internet, and</span> <span data-dur="2.160" data-begin="11.270">most often people connect wirelessly.</span>
+                    <span data-dur="0.525" data-begin="13.960">Let's look at an example of how
+                    you can connect to the internet.</span>
+                    <br><br><span data-dur="0.191" data-begin="17.940">If you live in a city or a town,
+                    you probably have a coaxial cable for</span> <span data-dur="0.225" data-begin="22.370">cable Internet, or a phone line if you
+                    have DSL, running to the outside of</span> <span data-dur="0.245" data-begin="26.880">your house, that connects you to
+                    the Internet Service Provider, or ISP.</span><br><br> <span data-dur="0.438" data-begin="32.100">If you live far out in the country,
+                    you'll more likely have</span> <span data-dur="0.637" data-begin="34.730">a dish outside your house, connecting
+                    you wirelessly to your closest ISP, or</span>
+                    <span data-dur="0.166" data-begin="39.430">you might also use the telephone system.</span> <span data-dur="0.268" data-begin="42.350">Whether a wire comes straight from
+                    the ISP hookup outside your house, or</span> <span data-dur="0.111" data-begin="46.300">it travels over radio
+                    waves from your roof,</span> <span data-dur="0.411" data-begin="49.270">the first stop a wire will make once
+                    inside your house, is at your modem.</span><br><br> <span data-dur="0.205" data-begin="53.760">A modem is what connects the internet
+                    to your network at home.</span>
+                    <span data-dur="0.134" data-begin="57.780">A few common residential modems are DSL or</span>.</p>
+            </div>
+            </div>
+
+
+        <script src="script.js"></script>
+        <script src="read-along.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
